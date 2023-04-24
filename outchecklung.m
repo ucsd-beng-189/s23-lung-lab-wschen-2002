@@ -28,25 +28,25 @@ cA=PA/RT;
 cv
 %
 %mean arterial oxygen concentration:
-cabar=Q' *ca/sum(Q)
+cabar=Q' *ca/sum(Q);
 %  
 %mean alveolar oxygen concentration:
-cAbar=VA'*cA/sum(VA)
+cAbar=VA'*cA/sum(VA);
 %
 %oxygen concentration is the inspired air:
-cI
+cI;
 %
 %oxygen partial pressure in venous blood:
-Pv=H(cv)
+Pv=H(cv);
 %
 %mean arterial oxygen partial pressure:
-Pabar=H(cabar)
+Pabar=H(cabar);
 %
 %mean alveolar oxygen partial pressure:
-PAbar=RT*cAbar
+PAbar=RT*cAbar;
 %
 %oxygen partial pressure in the inspired air:
-PI=RT*cI
+PI=RT*cI;
 % 
 %check that partial pressures are in expected order
 if((Pv<Pabar)&(Pabar<=PAbar)&(PAbar<PI))
@@ -77,17 +77,14 @@ fa=VA'*(cI-cA); %=sum(VA.*(cI-cA))
 check5=abs(M-fb)/abs(M)
 check6=abs(M-fa)/abs(M)
 %
-%plot various results 
-%against the ventilation-perfusion ratio, r:
-%(plot individual points instead of lines 
-%since r values are not in order)
-%define vector with all unit entries:
+%plot various results against the ventilation-perfusion ratio, r:(plot individual points instead of lines 
+%since r values are not in order)define vector with all unit entries:
 u=ones(n,1);
 cblood=[cv*u cabar*u ca];
 cair=  [cI*u cAbar*u cA];
 Pressures=[Pv*u Pabar*u PAbar*u PI*u Pa PA];
-figure(2)
-subplot(2,1,1),plot(r,cblood,'.')
-subplot(2,1,2),plot(r,cair  ,'.')
-figure(3)
-plot(r,Pressures,'.')
+%figure(2)
+%subplot(2,1,1),plot(r,cblood,'.')
+%subplot(2,1,2),plot(r,cair  ,'.')
+%figure(3)
+%plot(r,Pressures,'.')

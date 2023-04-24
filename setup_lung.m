@@ -20,12 +20,12 @@ cI=cref
 %
 %blood oxygen concentration
 %at full hemoglobin saturation: 
-cstar=cref
+%cstar=cref
 %cstar=4*(concentration of hemoglobin 
 %in blood expressed in moles/liter)
 %
 %rate of oxygen consumption (moles/minute):
-M=0.25*cref*5.6
+M=0.01*cref*5.6
 %
 %oxygen partial pressure 
 %at which hemoglobin is half-saturated:
@@ -63,8 +63,8 @@ av=(a1+a2)/2;
 VA=VAbar*(a1*beta+av*(1-beta));
 Q = Qbar*(a2*beta+av*(1-beta));
 r=VA./Q;
-figure(1)
-plot(Q,VA,'.')
+%figure(1)
+%plot(Q,VA,'.')
 
 %find actual values of 
 %VAtotal, Qtotal, VAbar, and Qbar:
